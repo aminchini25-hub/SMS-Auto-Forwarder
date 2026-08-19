@@ -57,7 +57,7 @@
 
         <!-- Privacy note -->
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.App.SectionCard"
+            style="@style/SmsAutoForwarderSectionCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp">
@@ -88,7 +88,7 @@
 
         <!-- Sender & recipient -->
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.App.SectionCard"
+            style="@style/SmsAutoForwarderSectionCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
@@ -106,12 +106,12 @@
                     android:gravity="center_vertical">
 
                     <ImageView
-                        style="@style/Widget.App.SectionHeaderIcon"
+                        style="@style/SmsAutoForwarderSectionHeaderIcon"
                         android:src="@drawable/ic_call"
                         android:contentDescription="@null" />
 
                     <TextView
-                        style="@style/Widget.App.SectionTitle"
+                        style="@style/SmsAutoForwarderSectionTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/sender_recipient_section" />
@@ -153,7 +153,7 @@
                         android:maxLines="1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <View style="@style/Widget.App.Divider" />
+                <View style="@style/SmsAutoForwarderDivider" />
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/switchEnable"
@@ -168,7 +168,7 @@
 
         <!-- Keyword filter -->
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.App.SectionCard"
+            style="@style/SmsAutoForwarderSectionCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
@@ -186,12 +186,12 @@
                     android:gravity="center_vertical">
 
                     <ImageView
-                        style="@style/Widget.App.SectionHeaderIcon"
+                        style="@style/SmsAutoForwarderSectionHeaderIcon"
                         android:src="@drawable/ic_filter"
                         android:contentDescription="@null" />
 
                     <TextView
-                        style="@style/Widget.App.SectionTitle"
+                        style="@style/SmsAutoForwarderSectionTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/keyword_filter_title" />
@@ -227,7 +227,7 @@
 
         <!-- Channels -->
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.App.SectionCard"
+            style="@style/SmsAutoForwarderSectionCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
@@ -245,12 +245,12 @@
                     android:gravity="center_vertical">
 
                     <ImageView
-                        style="@style/Widget.App.SectionHeaderIcon"
+                        style="@style/SmsAutoForwarderSectionHeaderIcon"
                         android:src="@drawable/ic_link"
                         android:contentDescription="@null" />
 
                     <TextView
-                        style="@style/Widget.App.SectionTitle"
+                        style="@style/SmsAutoForwarderSectionTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/channels_title" />
@@ -258,16 +258,16 @@
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/switchChannelSms"
-                    style="@style/Widget.App.ChannelSwitch"
+                    style="@style/SmsAutoForwarderChannelSwitch"
                     android:layout_marginTop="16dp"
                     android:drawableStart="@drawable/ic_sms"
                     android:text="@string/channel_sms" />
 
-                <View style="@style/Widget.App.Divider" />
+                <View style="@style/SmsAutoForwarderDivider" />
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/switchChannelTelegram"
-                    style="@style/Widget.App.ChannelSwitch"
+                    style="@style/SmsAutoForwarderChannelSwitch"
                     android:drawableStart="@drawable/ic_send"
                     android:text="@string/channel_telegram" />
 
@@ -312,11 +312,11 @@
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
-                <View style="@style/Widget.App.Divider" />
+                <View style="@style/SmsAutoForwarderDivider" />
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/switchChannelWebhook"
-                    style="@style/Widget.App.ChannelSwitch"
+                    style="@style/SmsAutoForwarderChannelSwitch"
                     android:drawableStart="@drawable/ic_link"
                     android:text="@string/channel_webhook" />
 
@@ -374,12 +374,12 @@
             android:gravity="center_vertical">
 
             <ImageView
-                style="@style/Widget.App.SectionHeaderIcon"
+                style="@style/SmsAutoForwarderSectionHeaderIcon"
                 android:src="@drawable/ic_check_circle"
                 android:contentDescription="@null" />
 
             <TextView
-                style="@style/Widget.App.SectionTitle"
+                style="@style/SmsAutoForwarderSectionTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/status_section" />
@@ -395,7 +395,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardStatus"
-            style="@style/Widget.App.SectionCard"
+            style="@style/SmsAutoForwarderSectionCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp">
@@ -419,7 +419,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardNetworkStatus"
-            style="@style/Widget.App.SectionCard"
+            style="@style/SmsAutoForwarderSectionCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp">
@@ -442,19 +442,19 @@
             android:gravity="center_vertical">
 
             <ImageView
-                style="@style/Widget.App.SectionHeaderIcon"
+                style="@style/SmsAutoForwarderSectionHeaderIcon"
                 android:src="@drawable/ic_settings"
                 android:contentDescription="@null" />
 
             <TextView
-                style="@style/Widget.App.SectionTitle"
+                style="@style/SmsAutoForwarderSectionTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/background_title" />
         </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.App.SectionCard"
+            style="@style/SmsAutoForwarderSectionCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp">
