@@ -14,7 +14,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.Locale
 
 class SettingsFragment : Fragment(R.layout.fragment_settings) {
@@ -55,14 +54,6 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
                 )
             )
         }
-        view.findViewById<MaterialButton>(R.id.btnInstallInfo).setOnClickListener {
-            MaterialAlertDialogBuilder(requireContext())
-                .setTitle(R.string.install_warning_title)
-                .setMessage(R.string.install_warning_message)
-                .setPositiveButton(R.string.got_it, null)
-                .show()
-        }
-
         updatePermissionState()
         updateDeviceGuide()
     }

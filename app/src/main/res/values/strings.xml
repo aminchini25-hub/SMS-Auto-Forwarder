@@ -64,13 +64,6 @@
     <string name="request_permissions">Grant required permissions</string>
     <string name="open_app_settings">Open app settings</string>
     <string name="background_title">Background reliability</string>
-    <string name="install_warning_card_title">Why Android warns during install</string>
-    <string name="install_warning_card_body">A GitHub APK is installed outside Google Play, so Android may ask you to allow this install source and Play Protect may show a warning.</string>
-    <string name="learn_more">Learn more</string>
-    <string name="install_warning_title">Install warning</string>
-    <string name="install_warning_message">This warning comes from Android because the APK is sideloaded and is not installed from Google Play. The app cannot disable or bypass this security screen. A Play Store distribution would avoid the unknown-source install prompt, but SMS permissions are subject to Google Play policy.</string>
-    <string name="got_it">Got it</string>
-
     <string name="permission_dialog_title">Allow SMS access?</string>
     <string name="permission_dialog_message">The app requests RECEIVE_SMS so it can detect new matching messages. SEND_SMS is requested only when SMS forwarding is enabled.</string>
     <string name="continue_label">Continue</string>

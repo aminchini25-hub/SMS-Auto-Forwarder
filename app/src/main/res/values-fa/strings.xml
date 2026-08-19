@@ -64,13 +64,6 @@
     <string name="request_permissions">دادن مجوزهای لازم</string>
     <string name="open_app_settings">باز کردن تنظیمات برنامه</string>
     <string name="background_title">پایداری در پس‌زمینه</string>
-    <string name="install_warning_card_title">چرا اندروید هنگام نصب هشدار می‌دهد؟</string>
-    <string name="install_warning_card_body">APK گیت‌هاب خارج از Google Play نصب می‌شود، بنابراین اندروید ممکن است اجازه نصب از این منبع بخواهد و Play Protect هشدار نشان دهد.</string>
-    <string name="learn_more">توضیح بیشتر</string>
-    <string name="install_warning_title">هشدار نصب</string>
-    <string name="install_warning_message">این هشدار مربوط به خود اندروید است چون APK به‌صورت دستی و خارج از Google Play نصب می‌شود. برنامه نمی‌تواند این صفحه امنیتی را حذف یا دور بزند. انتشار از Play Store هشدار منبع ناشناس را حذف می‌کند، اما مجوزهای SMS مشمول سیاست‌های Google Play هستند.</string>
-    <string name="got_it">متوجه شدم</string>
-
     <string name="permission_dialog_title">اجازه دسترسی به SMS؟</string>
     <string name="permission_dialog_message">RECEIVE_SMS فقط برای تشخیص پیام جدید لازم است. SEND_SMS فقط وقتی کانال SMS را روشن کنید درخواست می‌شود.</string>
     <string name="continue_label">ادامه</string>
