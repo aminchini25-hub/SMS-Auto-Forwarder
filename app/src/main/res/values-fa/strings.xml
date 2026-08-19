@@ -64,6 +64,13 @@
     <string name="request_permissions">دادن مجوزهای لازم</string>
     <string name="open_app_settings">باز کردن تنظیمات برنامه</string>
     <string name="background_title">پایداری در پس‌زمینه</string>
+    <string name="install_warning_card_title">چرا اندروید هنگام نصب هشدار می‌دهد؟</string>
+    <string name="install_warning_card_body">APK گیت‌هاب خارج از Google Play نصب می‌شود، بنابراین اندروید ممکن است اجازه نصب از این منبع بخواهد و Play Protect هشدار نشان دهد.</string>
+    <string name="learn_more">توضیح بیشتر</string>
+    <string name="install_warning_title">هشدار نصب</string>
+    <string name="install_warning_message">این هشدار مربوط به خود اندروید است چون APK به‌صورت دستی و خارج از Google Play نصب می‌شود. برنامه نمی‌تواند این صفحه امنیتی را حذف یا دور بزند. انتشار از Play Store هشدار منبع ناشناس را حذف می‌کند، اما مجوزهای SMS مشمول سیاست‌های Google Play هستند.</string>
+    <string name="got_it">متوجه شدم</string>
+
     <string name="permission_dialog_title">اجازه دسترسی به SMS؟</string>
     <string name="permission_dialog_message">RECEIVE_SMS فقط برای تشخیص پیام جدید لازم است. SEND_SMS فقط وقتی کانال SMS را روشن کنید درخواست می‌شود.</string>
     <string name="continue_label">ادامه</string>
@@ -83,8 +90,25 @@
     <string name="last_event_queued">در صف</string>
     <string name="last_event_sent">ارسال شد</string>
     <string name="last_event_delivered">تحویل شد</string>
-    <string name="last_event_failed">ناموفق (کد %1$d)</string>
+    <string name="last_event_failed">ناموفق: %1$s</string>
     <string name="last_event_with_time">%1$s — %2$s</string>
+
+    <string name="network_status_title">وضعیت کانال‌های شبکه</string>
+    <string name="network_error_http">ناموفق (پاسخ سرور: HTTP %1$d)</string>
+    <string name="network_error_timeout">ناموفق: اتصال با تأخیر مواجه شد (Timeout)</string>
+    <string name="network_error_no_connection">ناموفق: اینترنت در دسترس نیست</string>
+    <string name="network_error_invalid_config">ناموفق: تنظیمات کانال را بررسی کنید</string>
+    <string name="network_error_unknown">ناموفق: امکان اتصال به سرور نبود</string>
+
+    <string name="sms_error_pre_send">شروع ارسال ممکن نشد (مجوز و گیرنده را بررسی کنید)</string>
+    <string name="sms_error_no_service">آنتن‌دهی نیست یا سرویس اپراتور در دسترس نیست</string>
+    <string name="sms_error_radio_off">حالت هواپیما روشن است یا رادیو خاموش است</string>
+    <string name="sms_error_null_pdu">دستگاه نتوانست پیام را کدگذاری کند</string>
+    <string name="sms_error_limit_exceeded">تعداد پیامک‌ها از سقف مجاز اپراتور گذشت</string>
+    <string name="sms_error_fdn_blocked">به‌دلیل محدودیت Fixed Dialing Numbers مسدود شد</string>
+    <string name="sms_error_short_code_not_allowed">ارسال به شماره‌های کوتاه در این دستگاه مسدود است</string>
+    <string name="sms_error_short_code_never_allowed">ارسال به شماره‌های کوتاه مجاز نیست</string>
+    <string name="sms_error_generic">اپراتور خطای عمومی در ارسال گزارش داد</string>
 
     <string name="permissions_already_granted">مجوزهای لازم قبلاً داده شده‌اند.</string>
     <string name="permissions_granted">مجوزها داده شدند.</string>

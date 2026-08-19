@@ -79,17 +79,39 @@ class PrefsHelper(context: Context) {
         get() = prefs.getString(KEY_WEBHOOK_URL, "") ?: ""
         set(value) = prefs.edit().putString(KEY_WEBHOOK_URL, value).apply()
 
-    var lastNetworkEvent: String
-        get() = prefs.getString(KEY_LAST_NETWORK_EVENT, EVENT_NONE) ?: EVENT_NONE
-        set(value) = prefs.edit().putString(KEY_LAST_NETWORK_EVENT, value).apply()
+    /**
+     * Each network channel (Telegram / Webhook) keeps its own last-result
+     * record so that one channel's status can never overwrite another's.
+     */
+    data class ChannelStatus(
+        val status: ForwardStatus?,
+        val httpCode: Int,
+        val at: Long
+    )
 
-    var lastNetworkEventAt: Long
-        get() = prefs.getLong(KEY_LAST_NETWORK_EVENT_AT, 0L)
-        set(value) = prefs.edit().putLong(KEY_LAST_NETWORK_EVENT_AT, value).apply()
+    fun setChannelResult(channel: String, result: ForwardResult) {
+        prefs.edit()
+            .putString(channelStatusKey(channel), result.status.name)
+            .putInt(channelHttpCodeKey(channel), result.httpCode ?: 0)
+            .putLong(channelAtKey(channel), System.currentTimeMillis())
+            .apply()
+    }
 
-    var lastNetworkChannel: String
-        get() = prefs.getString(KEY_LAST_NETWORK_CHANNEL, "") ?: ""
-        set(value) = prefs.edit().putString(KEY_LAST_NETWORK_CHANNEL, value).apply()
+    fun getChannelResult(channel: String): ChannelStatus {
+        val statusName = prefs.getString(channelStatusKey(channel), null)
+        val status = statusName?.let { name ->
+            runCatching { ForwardStatus.valueOf(name) }.getOrNull()
+        }
+        return ChannelStatus(
+            status = status,
+            httpCode = prefs.getInt(channelHttpCodeKey(channel), 0),
+            at = prefs.getLong(channelAtKey(channel), 0L)
+        )
+    }
+
+    private fun channelStatusKey(channel: String) = "channel_${channel}_status"
+    private fun channelHttpCodeKey(channel: String) = "channel_${channel}_http_code"
+    private fun channelAtKey(channel: String) = "channel_${channel}_at"
 
     fun beginForward(messageId: String, totalParts: Int) {
         prefs.edit()
@@ -123,9 +145,8 @@ class PrefsHelper(context: Context) {
         private const val KEY_TELEGRAM_TOKEN = "telegram_token"
         private const val KEY_TELEGRAM_CHAT_ID = "telegram_chat_id"
         private const val KEY_WEBHOOK_URL = "webhook_url"
-        private const val KEY_LAST_NETWORK_EVENT = "last_network_event"
-        private const val KEY_LAST_NETWORK_EVENT_AT = "last_network_event_at"
-        private const val KEY_LAST_NETWORK_CHANNEL = "last_network_channel"
+
+        const val ERROR_CODE_PRE_SEND = -1
 
         const val EVENT_NONE = "none"
         const val EVENT_QUEUED = "queued"

@@ -72,11 +72,17 @@ class SmsReceiver : BroadcastReceiver() {
             (if (telegramEnabled) 1 else 0) + (if (webhookEnabled) 1 else 0)
         )
 
-        fun onChannelDone(channel: String, success: Boolean) {
+        fun onChannelDone(channel: String, result: ForwardResult) {
             val p = PrefsHelper(appContext)
-            p.lastNetworkChannel = channel
-            p.lastNetworkEvent = if (success) PrefsHelper.EVENT_SENT else PrefsHelper.EVENT_FAILED
-            p.lastNetworkEventAt = System.currentTimeMillis()
+            p.setChannelResult(channel, result)
+
+            if (!result.isSuccess) {
+                Log.e(
+                    TAG,
+                    "Forward via $channel failed: ${result.status}" +
+                        (result.httpCode?.let { " (HTTP $it)" } ?: "")
+                )
+            }
 
             if (remaining.decrementAndGet() <= 0) {
                 pendingResult.finish()
@@ -89,7 +95,7 @@ class SmsReceiver : BroadcastReceiver() {
                 prefs.telegramBotToken,
                 prefs.telegramChatId,
                 text
-            ) { success -> onChannelDone(CHANNEL_TELEGRAM, success) }
+            ) { result -> onChannelDone(CHANNEL_TELEGRAM, result) }
         }
 
         if (webhookEnabled) {
@@ -97,7 +103,7 @@ class SmsReceiver : BroadcastReceiver() {
                 prefs.webhookUrl,
                 incomingSender,
                 body
-            ) { success -> onChannelDone(CHANNEL_WEBHOOK, success) }
+            ) { result -> onChannelDone(CHANNEL_WEBHOOK, result) }
         }
     }
 
@@ -118,7 +124,10 @@ class SmsReceiver : BroadcastReceiver() {
             val prefs = PrefsHelper(context)
             prefs.lastEvent = PrefsHelper.EVENT_FAILED
             prefs.lastEventAt = System.currentTimeMillis()
-            Log.e(TAG, "SMS forwarding failed.", t)
+            // Distinguishes a pre-send failure (bad config, missing SmsManager)
+            // from a carrier-reported resultCode from SmsStatusReceiver.
+            prefs.lastErrorCode = PrefsHelper.ERROR_CODE_PRE_SEND
+            Log.e(TAG, "SMS forwarding failed before it reached the carrier.", t)
         }
     }
 

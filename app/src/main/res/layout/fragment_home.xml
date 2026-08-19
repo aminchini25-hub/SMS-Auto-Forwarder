@@ -124,7 +124,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:layout_marginBottom="24dp"
             app:cardBackgroundColor="@color/surface"
             app:cardCornerRadius="24dp"
             app:cardElevation="0dp"
@@ -132,10 +131,66 @@
             app:strokeWidth="1dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/last_forward_label" android:textColor="@color/text_secondary" android:textSize="12sp" />
-                <TextView android:id="@+id/tvLastEventValue" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/text_primary" android:textSize="15sp" />
+                <TextView android:id="@+id/tvLastEventValue" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/text_primary" android:textSize="15sp" android:textStyle="bold" />
                 <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginVertical="14dp" android:background="@color/card_stroke" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/permission_label" android:textColor="@color/text_secondary" android:textSize="12sp" />
                 <TextView android:id="@+id/tvPermissionValue" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/text_primary" android:textSize="15sp" android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvNetworkStatusTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/network_status_title"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/networkCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+
+                <LinearLayout
+                    android:id="@+id/rowTelegramStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/channel_telegram_short" android:textColor="@color/text_secondary" android:textSize="12sp" />
+                    <TextView android:id="@+id/tvTelegramStatusValue" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/text_primary" android:textSize="15sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/dividerNetworkChannels"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="14dp"
+                    android:background="@color/card_stroke"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/rowWebhookStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/channel_webhook_short" android:textColor="@color/text_secondary" android:textSize="12sp" />
+                    <TextView android:id="@+id/tvWebhookStatusValue" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/text_primary" android:textSize="15sp" android:textStyle="bold" />
+                </LinearLayout>
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

@@ -28,6 +28,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var tvLastEvent: TextView
     private lateinit var tvPermission: TextView
     private lateinit var statusCard: MaterialCardView
+    private lateinit var tvNetworkStatusTitle: TextView
+    private lateinit var networkCard: MaterialCardView
+    private lateinit var rowTelegramStatus: View
+    private lateinit var tvTelegramStatus: TextView
+    private lateinit var dividerNetworkChannels: View
+    private lateinit var rowWebhookStatus: View
+    private lateinit var tvWebhookStatus: TextView
     private var suppressToggle = false
 
     private val permissionLauncher =
@@ -53,6 +60,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         tvLastEvent = view.findViewById(R.id.tvLastEventValue)
         tvPermission = view.findViewById(R.id.tvPermissionValue)
         statusCard = view.findViewById(R.id.statusCard)
+        tvNetworkStatusTitle = view.findViewById(R.id.tvNetworkStatusTitle)
+        networkCard = view.findViewById(R.id.networkCard)
+        rowTelegramStatus = view.findViewById(R.id.rowTelegramStatus)
+        tvTelegramStatus = view.findViewById(R.id.tvTelegramStatusValue)
+        dividerNetworkChannels = view.findViewById(R.id.dividerNetworkChannels)
+        rowWebhookStatus = view.findViewById(R.id.rowWebhookStatus)
+        tvWebhookStatus = view.findViewById(R.id.tvWebhookStatusValue)
 
         view.findViewById<MaterialButton>(R.id.btnEditRule).setOnClickListener {
             (activity as? MainActivity)?.navigateTo(R.id.nav_rules)
@@ -160,6 +174,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
         tvChannels.text = enabledChannels()
         tvLastEvent.text = formatLastEvent()
+        tvLastEvent.setTextColor(colorForEvent(prefs.lastEvent))
         tvPermission.setText(if (permissionsOk()) R.string.status_permissions_granted else R.string.status_permissions_missing)
 
         val color = ContextCompat.getColor(
@@ -168,6 +183,67 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         )
         statusCard.strokeColor = color
         statusCard.strokeWidth = resources.getDimensionPixelSize(R.dimen.card_stroke_width_accent)
+
+        refreshNetworkStatus()
+    }
+
+    private fun refreshNetworkStatus() {
+        val showTelegram = prefs.channelTelegramEnabled
+        val showWebhook = prefs.channelWebhookEnabled
+        val showCard = showTelegram || showWebhook
+
+        tvNetworkStatusTitle.visibility = if (showCard) View.VISIBLE else View.GONE
+        networkCard.visibility = if (showCard) View.VISIBLE else View.GONE
+        rowTelegramStatus.visibility = if (showTelegram) View.VISIBLE else View.GONE
+        rowWebhookStatus.visibility = if (showWebhook) View.VISIBLE else View.GONE
+        dividerNetworkChannels.visibility = if (showTelegram && showWebhook) View.VISIBLE else View.GONE
+
+        if (showTelegram) {
+            val result = prefs.getChannelResult(SmsReceiver.CHANNEL_TELEGRAM)
+            tvTelegramStatus.text = formatChannelStatus(result)
+            tvTelegramStatus.setTextColor(colorForStatus(result.status))
+        }
+        if (showWebhook) {
+            val result = prefs.getChannelResult(SmsReceiver.CHANNEL_WEBHOOK)
+            tvWebhookStatus.text = formatChannelStatus(result)
+            tvWebhookStatus.setTextColor(colorForStatus(result.status))
+        }
+    }
+
+    private fun formatChannelStatus(result: PrefsHelper.ChannelStatus): String {
+        val status = result.status
+        if (status == null || result.at <= 0L) {
+            return getString(R.string.status_no_forward_yet)
+        }
+
+        val label = if (status == ForwardStatus.HTTP_ERROR) {
+            getString(R.string.network_error_http, result.httpCode ?: 0)
+        } else {
+            getString(ErrorReasons.networkResultLabel(status))
+        }
+
+        val whenText = DateFormat.getDateFormat(requireContext()).format(Date(result.at)) +
+            "  " + DateFormat.getTimeFormat(requireContext()).format(Date(result.at))
+        return getString(R.string.last_event_with_time, label, whenText)
+    }
+
+    private fun colorForEvent(event: String): Int {
+        val colorRes = when (event) {
+            PrefsHelper.EVENT_SENT, PrefsHelper.EVENT_DELIVERED -> R.color.success
+            PrefsHelper.EVENT_FAILED -> R.color.error
+            PrefsHelper.EVENT_QUEUED -> R.color.warning
+            else -> R.color.text_primary
+        }
+        return ContextCompat.getColor(requireContext(), colorRes)
+    }
+
+    private fun colorForStatus(status: ForwardStatus?): Int {
+        val colorRes = when (status) {
+            ForwardStatus.SUCCESS -> R.color.success
+            null -> R.color.text_primary
+            else -> R.color.error
+        }
+        return ContextCompat.getColor(requireContext(), colorRes)
     }
 
     private fun enabledChannels(): String {
@@ -187,7 +263,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             PrefsHelper.EVENT_QUEUED -> getString(R.string.last_event_queued)
             PrefsHelper.EVENT_SENT -> getString(R.string.last_event_sent)
             PrefsHelper.EVENT_DELIVERED -> getString(R.string.last_event_delivered)
-            PrefsHelper.EVENT_FAILED -> getString(R.string.last_event_failed, prefs.lastErrorCode)
+            PrefsHelper.EVENT_FAILED -> getString(
+                R.string.last_event_failed,
+                getString(ErrorReasons.smsResultLabel(prefs.lastErrorCode))
+            )
             else -> getString(R.string.status_no_forward_yet)
         }
         val whenText = DateFormat.getDateFormat(requireContext()).format(Date(prefs.lastEventAt)) +
