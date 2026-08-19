@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/channels_intro" android:textColor="@color/text_secondary" android:textSize="14sp" />
+
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" app:cardBackgroundColor="@color/channel_sms_bg" app:cardCornerRadius="24dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="18dp">
+                <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchSms" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="52dp" android:text="@string/channel_sms" android:textColor="@color/text_primary" android:textSize="17sp" android:textStyle="bold" android:drawableStart="@drawable/ic_sms" android:drawablePadding="12dp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/channel_sms_help" android:textColor="@color/text_secondary" android:textSize="13sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" app:cardBackgroundColor="@color/channel_telegram_bg" app:cardCornerRadius="24dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="18dp">
+                <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchTelegram" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="52dp" android:text="@string/channel_telegram" android:textColor="@color/text_primary" android:textSize="17sp" android:textStyle="bold" android:drawableStart="@drawable/ic_send" android:drawablePadding="12dp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/channel_telegram_help" android:textColor="@color/text_secondary" android:textSize="13sp" />
+                <LinearLayout android:id="@+id/telegramDetails" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/telegram_token_hint">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/editTelegramToken" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPassword" android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:hint="@string/telegram_chatid_hint">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/editTelegramChatId" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" app:cardBackgroundColor="@color/channel_webhook_bg" app:cardCornerRadius="24dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="18dp">
+                <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchWebhook" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="52dp" android:text="@string/channel_webhook" android:textColor="@color/text_primary" android:textSize="17sp" android:textStyle="bold" android:drawableStart="@drawable/ic_link" android:drawablePadding="12dp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/channel_webhook_help" android:textColor="@color/text_secondary" android:textSize="13sp" />
+                <LinearLayout android:id="@+id/webhookDetails" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/webhook_url_hint">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/editWebhookUrl" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textUri" android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnSaveChannels" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:layout_marginBottom="28dp" android:minHeight="52dp" android:text="@string/save_channels" app:icon="@drawable/ic_check_circle" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

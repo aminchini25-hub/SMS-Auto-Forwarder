@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="card_stroke">#2A3542</color>
-    <color name="icon_circle_bg">#12283D</color>
-    <color name="icon_tint">#6FB3E0</color>
+    <color name="brand_primary">#A7A9FF</color>
+    <color name="brand_primary_dark">#7C80FF</color>
+    <color name="brand_secondary">#69D8D3</color>
+    <color name="app_background">#10121A</color>
+    <color name="surface">#191C26</color>
+    <color name="text_primary">#F1F2F7</color>
+    <color name="text_secondary">#AEB3C3</color>
+    <color name="card_stroke">#303544</color>
+    <color name="success">#59D7A4</color>
+    <color name="warning">#FFC168</color>
+    <color name="error">#FF8A8A</color>
+    <color name="hero_start">#4145BD</color>
+    <color name="hero_end">#6542B2</color>
+    <color name="on_hero">#FFFFFFFF</color>
+    <color name="on_hero_muted">#E1E2FF</color>
+    <color name="channel_sms_bg">#173129</color>
+    <color name="channel_telegram_bg">#16293A</color>
+    <color name="channel_webhook_bg">#2B2140</color>
+    <color name="info_card">#3B3020</color>
 
-    <color name="success_text">#6FCF97</color>
-    <color name="error_text">#F28B82</color>
-    <color name="neutral_stroke">#2A3542</color>
-
-    <color name="warning_bg">#3A1414</color>
-    <color name="warning_border">#5C201D</color>
+    <color name="brand_blue">#A7A9FF</color>
+    <color name="brand_blue_dark">#7C80FF</color>
+    <color name="brand_teal">#69D8D3</color>
+    <color name="success_text">#59D7A4</color>
+    <color name="error_text">#FF8A8A</color>
+    <color name="neutral_stroke">#303544</color>
+    <color name="icon_tint">#A7A9FF</color>
+    <color name="icon_circle_bg">#2A2E44</color>
 </resources>

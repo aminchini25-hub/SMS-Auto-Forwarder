@@ -1,0 +1,26 @@
+SMS Auto Forwarder v4.1 Hybrid Safe - Local validation
+
+Comparison basis:
+- Multi-screen v4 redesign (Home / Rules / Channels / Settings)
+- Alternate uploaded redesign reviewed and selected improvements merged
+
+Checks passed:
+- All Android XML files parse successfully.
+- English/Farsi string keys are in parity: 95 / 95.
+- No format-placeholder mismatch between English and Farsi strings.
+- No missing local R.string / R.id / R.layout / R.drawable / R.color / R.dimen / R.menu references found by static scan.
+- No invalid \\u escape pattern found in values resources.
+- No unescaped apostrophe risk found in string resources.
+- dual_sim_note does not reproduce the prior invalid unicode escape failure.
+- No custom Widget.* style without explicit parent was found; prior style/Widget linking failure pattern is absent.
+- Contact picker exists for both Sender and Recipient.
+- READ_CONTACTS permission is not requested.
+- Webhook validation accepts HTTPS and rejects HTTP / malformed URLs.
+- Android cleartext traffic is disabled.
+- Unused ACCESS_NETWORK_STATE permission removed.
+- git diff --check passed.
+- Core SenderMatcher + MessageFilter Kotlin smoke test passed.
+- NetworkForwarder syntax/HTTPS validator smoke test passed with local Android/JSON stubs.
+
+Important limitation:
+A complete Gradle/Android AAPT build was not run in this local container because the Android Gradle/SDK build environment is not installed here. GitHub Actions remains the authoritative final build validation.

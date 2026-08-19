@@ -1,66 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">فوروارد خودکار SMS</string>
-    <string name="app_title">فوروارد خودکار SMS</string>
-    <string name="app_subtitle">پیامک‌های یک فرستنده مشخص را به‌صورت خودکار برای یک گیرنده مشخص ارسال می‌کند.</string>
-    <string name="sender_recipient_section">فرستنده و گیرنده</string>
-    <string name="status_section">وضعیت</string>
-    <string name="privacy_note">حریم خصوصی: برنامه تحلیل‌گر، سرور شخص ثالث (جز کانال‌هایی که خودتان فعال می‌کنید) یا مجوز READ_SMS ندارد. اینترنت فقط در صورت فعال بودن فوروارد تلگرام یا وبهوک استفاده می‌شود. فقط SMSهای جدید می‌توانند فوروارد را فعال کنند.</string>
+    <string name="app_name">فوروارد خودکار پیامک</string>
+    <string name="nav_home">خانه</string>
+    <string name="nav_rules">قانون</string>
+    <string name="nav_channels">کانال‌ها</string>
+    <string name="nav_settings">تنظیمات</string>
 
-    <string name="keyword_filter_title">فیلتر کلمه کلیدی</string>
-    <string name="keyword_filter_hint">کلمات کلیدی، جدا شده با کاما (خالی = همه پیام‌ها)</string>
-    <string name="keyword_exclude_mode">حالت حذف (فقط وقتی هیچ‌کدام از کلمات نبود فوروارد شود)</string>
+    <string name="dashboard_eyebrow">وضعیت فوروارد</string>
+    <string name="dashboard_active">فوروارد روشن است</string>
+    <string name="dashboard_paused">فوروارد متوقف است</string>
+    <string name="dashboard_active_hint">پیام‌های جدیدی که با قانون تطبیق داشته باشند خودکار فوروارد می‌شوند.</string>
+    <string name="dashboard_paused_hint">هر وقت آماده بودید آن را روشن کنید.</string>
+    <string name="dashboard_setup_hint">اول قانون و کانال فوروارد را کامل کنید.</string>
+    <string name="dashboard_permission_hint">برای شروع فوروارد باید مجوز پیامک داده شود.</string>
+    <string name="enable_forwarding">فوروارد خودکار</string>
+    <string name="overview_title">خلاصه</string>
+    <string name="sender_label">فرستنده</string>
+    <string name="recipient_label">گیرنده</string>
+    <string name="channels_label">کانال‌ها</string>
+    <string name="activity_title">آخرین فعالیت</string>
+    <string name="last_forward_label">آخرین فوروارد</string>
+    <string name="permission_label">مجوزها</string>
+    <string name="edit_rule">ویرایش قانون</string>
+    <string name="edit_channels">کانال‌ها</string>
+    <string name="not_required">لازم نیست</string>
+    <string name="none_selected">انتخاب نشده</string>
 
-    <string name="channels_title">کانال‌های فوروارد</string>
-    <string name="channel_sms">فوروارد با SMS</string>
-    <string name="channel_telegram">فوروارد با ربات تلگرام</string>
-    <string name="channel_webhook">فوروارد با Webhook</string>
-    <string name="telegram_token_hint">توکن ربات تلگرام</string>
-    <string name="telegram_chatid_hint">شناسه چت تلگرام (chat ID)</string>
-    <string name="webhook_url_hint">آدرس Webhook (https://…)</string>
+    <string name="rules_intro">مشخص کنید فقط کدام فرستنده اجازه دارد فوروارد را فعال کند. می‌توانید شناسه‌ای مثل BANK تایپ کنید یا شماره را از مخاطبین بردارید.</string>
+    <string name="from_sender_title">فرستنده ورودی</string>
+    <string name="from_sender_help">فقط پیام‌هایی که با این شماره یا شناسه فرستنده تطبیق داشته باشند پذیرفته می‌شوند.</string>
+    <string name="to_recipient_title">گیرنده پیامک</string>
+    <string name="to_recipient_help">فقط وقتی کانال SMS روشن باشد استفاده می‌شود.</string>
+    <string name="sender_hint">شماره یا شناسه فرستنده</string>
+    <string name="recipient_hint">شماره گیرنده</string>
+    <string name="choose_sender_contact">انتخاب فرستنده از مخاطبین</string>
+    <string name="choose_recipient_contact">انتخاب گیرنده از مخاطبین</string>
+    <string name="contact_selected">انتخاب شد: %1$s</string>
+    <string name="keyword_filter_title">فیلتر کلمه</string>
+    <string name="keyword_filter_hint">کلمات را با ویرگول جدا کنید؛ خالی یعنی همه پیام‌ها</string>
+    <string name="keyword_exclude_mode">حالت حذف: فقط وقتی هیچ‌کدام از کلمات پیدا نشوند فوروارد شود</string>
+    <string name="save_rule">ذخیره قانون</string>
+    <string name="rule_saved">قانون ذخیره شد.</string>
 
-    <string name="network_status_title">وضعیت کانال‌های شبکه</string>
-    <string name="network_status_template">تلگرام: %1$s&#10;وبهوک: %2$s&#10;آخرین نتیجه شبکه: %3$s</string>
-    <string name="channel_configured">تنظیم شده</string>
-    <string name="channel_not_configured">تنظیم نشده</string>
-    <string name="network_no_attempt_yet">هنوز تلاشی انجام نشده</string>
+    <string name="channels_intro">هر پیام منطبق را از یک یا چند مسیر ارسال کنید.</string>
+    <string name="channel_sms">SMS</string>
+    <string name="channel_sms_short">SMS</string>
+    <string name="channel_sms_help">پیام را با سیم پیش‌فرض SMS به شماره دیگری بفرست.</string>
+    <string name="channel_telegram">ربات تلگرام</string>
+    <string name="channel_telegram_short">تلگرام</string>
+    <string name="channel_telegram_help">پیام را از طریق ربات به چت تلگرام بفرست.</string>
+    <string name="channel_webhook">Webhook امن HTTPS</string>
+    <string name="channel_webhook_short">Webhook</string>
+    <string name="channel_webhook_help">فرستنده و متن پیام را به آدرس امن HTTPS ارسال کن.</string>
+    <string name="telegram_token_hint">توکن ربات</string>
+    <string name="telegram_chatid_hint">Chat ID</string>
+    <string name="webhook_url_hint">https://example.com/webhook</string>
+    <string name="save_channels">ذخیره کانال‌ها</string>
+    <string name="channels_saved">کانال‌ها ذخیره شدند.</string>
 
-    <string name="sender_hint">فرستنده A (شماره یا نام فرستنده مثل BANK)</string>
-    <string name="recipient_hint">گیرنده B (شماره تلفن)</string>
-    <string name="enable_forwarding">فوروارد خودکار فعال باشد</string>
-    <string name="save_activate">ذخیره و فعال‌سازی</string>
-    <string name="request_permissions">بررسی / درخواست مجوزهای SMS</string>
+    <string name="permissions_title">مجوزهای پیامک</string>
+    <string name="permissions_ready_detail">همه مجوزهای لازم برای کانال‌های روشن داده شده‌اند.</string>
+    <string name="permissions_needed_detail">فقط مجوزهای پیامکی لازم برای کانال‌هایی که فعال می‌کنید درخواست می‌شوند.</string>
+    <string name="request_permissions">دادن مجوزهای لازم</string>
     <string name="open_app_settings">باز کردن تنظیمات برنامه</string>
+    <string name="background_title">پایداری در پس‌زمینه</string>
+    <string name="install_warning_card_title">چرا اندروید هنگام نصب هشدار می‌دهد؟</string>
+    <string name="install_warning_card_body">APK گیت‌هاب خارج از Google Play نصب می‌شود، بنابراین اندروید ممکن است اجازه نصب از این منبع بخواهد و Play Protect هشدار نشان دهد.</string>
+    <string name="learn_more">توضیح بیشتر</string>
+    <string name="install_warning_title">هشدار نصب</string>
+    <string name="install_warning_message">این هشدار مربوط به خود اندروید است چون APK به‌صورت دستی و خارج از Google Play نصب می‌شود. برنامه نمی‌تواند این صفحه امنیتی را حذف یا دور بزند. انتشار از Play Store هشدار منبع ناشناس را حذف می‌کند، اما مجوزهای SMS مشمول سیاست‌های Google Play هستند.</string>
+    <string name="got_it">متوجه شدم</string>
 
-    <string name="status_title">وضعیت</string>
-    <string name="status_active">فعال</string>
-    <string name="status_inactive">غیرفعال</string>
+    <string name="permission_dialog_title">اجازه دسترسی به SMS؟</string>
+    <string name="permission_dialog_message">RECEIVE_SMS فقط برای تشخیص پیام جدید لازم است. SEND_SMS فقط وقتی کانال SMS را روشن کنید درخواست می‌شود.</string>
+    <string name="continue_label">ادامه</string>
+    <string name="not_now">فعلاً نه</string>
+
+    <string name="setup_sender_first">اول در بخش قانون، فرستنده را مشخص کنید.</string>
+    <string name="setup_recipient_first">اول یک شماره گیرنده معتبر در بخش قانون وارد کنید.</string>
+    <string name="setup_channel_first">اول حداقل یک کانال فوروارد را روشن کنید.</string>
+    <string name="error_choose_channel">حداقل یک کانال فوروارد انتخاب کنید.</string>
+    <string name="error_telegram_config">توکن ربات و Chat ID تلگرام را کامل وارد کنید.</string>
+    <string name="error_https_webhook">Webhook باید یک آدرس HTTPS معتبر باشد.</string>
+
     <string name="status_not_set">تنظیم نشده</string>
-    <string name="status_permissions_granted">تأیید شده</string>
+    <string name="status_permissions_granted">داده شده</string>
     <string name="status_permissions_missing">ناقص</string>
     <string name="status_no_forward_yet">هنوز فورواردی انجام نشده</string>
-    <string name="status_template">فوروارد خودکار: %1$s&#10;فرستنده: %2$s&#10;گیرنده: %3$s&#10;مجوزهای SMS: %4$s&#10;آخرین نتیجه: %5$s</string>
-
-    <string name="last_event_queued">در صف ارسال</string>
+    <string name="last_event_queued">در صف</string>
     <string name="last_event_sent">ارسال شد</string>
-    <string name="last_event_delivered">تحویل شد (گزارش اپراتور)</string>
+    <string name="last_event_delivered">تحویل شد</string>
     <string name="last_event_failed">ناموفق (کد %1$d)</string>
     <string name="last_event_with_time">%1$s — %2$s</string>
 
-    <string name="background_title">تنظیمات پس‌زمینه</string>
-    <string name="guide_samsung">سامسونگ شناسایی شد:&#10;Settings → Apps → SMS Auto Forwarder → Battery → Unrestricted&#10;در صورت نیاز Background usage limits را هم بررسی کنید.</string>
-    <string name="guide_xiaomi">شیائومی / Redmi / POCO شناسایی شد:&#10;Background autostart را برای برنامه روشن کنید و Battery/Battery saver را روی No restrictions بگذارید.</string>
-    <string name="guide_generic">اگر گوشی برنامه را در پس‌زمینه می‌بندد، اجرای پس‌زمینه را مجاز و محدودیت باتری را غیرفعال کنید.</string>
-    <string name="dual_sim_note">گوشی دو سیم‌کارته: ارسال از سیم‌کارت پیش‌فرض SMS اندروید انجام می‌شود. در صورت نیاز سیم پیش‌فرض پیامک را در تنظیمات گوشی مشخص کنید.</string>
-    <string name="security_warning">OTP، کد بانکی و پیام‌های محرمانه را فقط وقتی خودکار فوروارد کنید که گیرنده صراحتاً مجاز و مورد اعتماد باشد.</string>
-
+    <string name="permissions_already_granted">مجوزهای لازم قبلاً داده شده‌اند.</string>
+    <string name="permissions_granted">مجوزها داده شدند.</string>
+    <string name="permissions_missing">مجوز پیامک لازم داده نشد.</string>
     <string name="error_sender_required">فرستنده را وارد کنید.</string>
-    <string name="error_recipient_invalid">شماره گیرنده معتبر وارد کنید.</string>
-    <string name="error_sender_recipient_same">فرستنده و گیرنده ظاهراً یکسان هستند. برای جلوگیری از اشتباه یکی را تغییر دهید.</string>
-    <string name="error_channel_required">برای فعال‌سازی حداقل یک کانال فوروارد را فعال کنید.</string>
-    <string name="error_webhook_https">آدرس وب‌هوک باید HTTPS باشد.</string>
-    <string name="settings_saved">تنظیمات روی گوشی ذخیره شد.</string>
-    <string name="permissions_already_granted">مجوزهای SMS قبلاً تأیید شده‌اند.</string>
-    <string name="permissions_granted">مجوزهای SMS تأیید شدند.</string>
-    <string name="permissions_missing">مجوزهای SMS هنوز کامل نیستند.</string>
+    <string name="error_recipient_invalid">یک شماره گیرنده معتبر وارد کنید.</string>
+    <string name="error_sender_recipient_same">فرستنده و گیرنده ظاهراً یکسان هستند.</string>
+
+    <string name="guide_samsung">سامسونگ: Settings → Apps → SMS Auto Forwarder → Battery → Unrestricted. اگر فوروارد متوقف شد Background usage limits را هم بررسی کنید.</string>
+    <string name="guide_xiaomi">شیائومی / ردمی / پوکو: Background autostart را روشن و Battery saver را روی No restrictions قرار دهید.</string>
+    <string name="guide_generic">اجازه اجرای برنامه در پس‌زمینه را بدهید و اگر گوشی برنامه را متوقف می‌کند، Battery optimization سخت‌گیرانه را غیرفعال کنید.</string>
+    <string name="dual_sim_note">گوشی دو سیم‌کارته: ارسال از سیم‌کارت پیش‌فرض SMS اندروید انجام می‌شود. در صورت نیاز سیم پیش‌فرض پیامک را در تنظیمات گوشی مشخص کنید.</string>
+    <string name="security_warning">کد یکبارمصرف، پیام بانکی یا اطلاعات محرمانه را فقط برای گیرنده مجاز و مورد اعتماد فوروارد کنید.</string>
 </resources>

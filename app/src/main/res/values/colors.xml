@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="brand_blue">#1769AA</color>
-    <color name="brand_blue_dark">#0F4C81</color>
-    <color name="brand_teal">#1B8A7A</color>
-    <color name="warning_text">#B3261E</color>
+    <color name="brand_primary">#5B5FEF</color>
+    <color name="brand_primary_dark">#3F43CC</color>
+    <color name="brand_secondary">#00A6A6</color>
+    <color name="app_background">#F6F7FB</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="text_primary">#161827</color>
+    <color name="text_secondary">#62677A</color>
+    <color name="card_stroke">#E4E7F0</color>
+    <color name="success">#159A68</color>
+    <color name="warning">#E18B20</color>
+    <color name="error">#D64B4B</color>
+    <color name="hero_start">#5B5FEF</color>
+    <color name="hero_end">#7A5BEF</color>
+    <color name="on_hero">#FFFFFFFF</color>
+    <color name="on_hero_muted">#DDE0FF</color>
+    <color name="channel_sms_bg">#EAF7F1</color>
+    <color name="channel_telegram_bg">#EAF4FF</color>
+    <color name="channel_webhook_bg">#F4EEFF</color>
+    <color name="info_card">#FFF5DF</color>
 
-    <color name="card_stroke">#E1E6EC</color>
-    <color name="icon_circle_bg">#E8F1FB</color>
-    <color name="icon_tint">#1769AA</color>
-
-    <color name="success_text">#1B8A5A</color>
-    <color name="error_text">#C62828</color>
-    <color name="neutral_stroke">#E1E6EC</color>
-
-    <color name="warning_bg">#FDECEA</color>
-    <color name="warning_border">#F5C2C0</color>
+    <!-- Backward compatible names still referenced by forwarding status code/resources. -->
+    <color name="brand_blue">#5B5FEF</color>
+    <color name="brand_blue_dark">#3F43CC</color>
+    <color name="brand_teal">#00A6A6</color>
+    <color name="success_text">#159A68</color>
+    <color name="error_text">#D64B4B</color>
+    <color name="neutral_stroke">#E4E7F0</color>
+    <color name="icon_tint">#5B5FEF</color>
+    <color name="icon_circle_bg">#EEF0FF</color>
 </resources>
