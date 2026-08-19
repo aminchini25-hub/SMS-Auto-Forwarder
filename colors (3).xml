@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="card_stroke">#2A3542</color>
+    <color name="icon_circle_bg">#12283D</color>
+    <color name="icon_tint">#6FB3E0</color>
+
+    <color name="success_text">#6FCF97</color>
+    <color name="error_text">#F28B82</color>
+    <color name="neutral_stroke">#2A3542</color>
+
+    <color name="warning_bg">#3A1414</color>
+    <color name="warning_border">#5C201D</color>
+</resources>

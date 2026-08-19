@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">فوروارد خودکار SMS</string>
+    <string name="app_title">فوروارد خودکار SMS</string>
+    <string name="app_subtitle">پیامک‌های یک فرستنده مشخص را به‌صورت خودکار برای یک گیرنده مشخص ارسال می‌کند.</string>
+    <string name="sender_recipient_section">فرستنده و گیرنده</string>
+    <string name="status_section">وضعیت</string>
+    <string name="privacy_note">حریم خصوصی: برنامه تحلیل‌گر، سرور شخص ثالث (جز کانال‌هایی که خودتان فعال می‌کنید) یا مجوز READ_SMS ندارد. اینترنت فقط در صورت فعال بودن فوروارد تلگرام یا وبهوک استفاده می‌شود. فقط SMSهای جدید می‌توانند فوروارد را فعال کنند.</string>
+
+    <string name="keyword_filter_title">فیلتر کلمه کلیدی</string>
+    <string name="keyword_filter_hint">کلمات کلیدی، جدا شده با کاما (خالی = همه پیام‌ها)</string>
+    <string name="keyword_exclude_mode">حالت حذف (فقط وقتی هیچ‌کدام از کلمات نبود فوروارد شود)</string>
+
+    <string name="channels_title">کانال‌های فوروارد</string>
+    <string name="channel_sms">فوروارد با SMS</string>
+    <string name="channel_telegram">فوروارد با ربات تلگرام</string>
+    <string name="channel_webhook">فوروارد با Webhook</string>
+    <string name="telegram_token_hint">توکن ربات تلگرام</string>
+    <string name="telegram_chatid_hint">شناسه چت تلگرام (chat ID)</string>
+    <string name="webhook_url_hint">آدرس Webhook (https://…)</string>
+
+    <string name="network_status_title">وضعیت کانال‌های شبکه</string>
+    <string name="network_status_template">تلگرام: %1$s\nوبهوک: %2$s\nآخرین نتیجه شبکه: %3$s</string>
+    <string name="channel_configured">تنظیم شده</string>
+    <string name="channel_not_configured">تنظیم نشده</string>
+    <string name="network_no_attempt_yet">هنوز تلاشی انجام نشده</string>
+
+    <string name="sender_hint">فرستنده A (شماره یا نام فرستنده مثل BANK)</string>
+    <string name="recipient_hint">گیرنده B (شماره تلفن)</string>
+    <string name="enable_forwarding">فوروارد خودکار فعال باشد</string>
+    <string name="save_activate">ذخیره و فعال‌سازی</string>
+    <string name="request_permissions">بررسی / درخواست مجوزهای SMS</string>
+    <string name="open_app_settings">باز کردن تنظیمات برنامه</string>
+
+    <string name="status_title">وضعیت</string>
+    <string name="status_active">فعال</string>
+    <string name="status_inactive">غیرفعال</string>
+    <string name="status_not_set">تنظیم نشده</string>
+    <string name="status_permissions_granted">تأیید شده</string>
+    <string name="status_permissions_missing">ناقص</string>
+    <string name="status_no_forward_yet">هنوز فورواردی انجام نشده</string>
+    <string name="status_template">فوروارد خودکار: %1$s\nفرستنده: %2$s\nگیرنده: %3$s\nمجوزهای SMS: %4$s\nآخرین نتیجه: %5$s</string>
+
+    <string name="last_event_queued">در صف ارسال</string>
+    <string name="last_event_sent">ارسال شد</string>
+    <string name="last_event_delivered">تحویل شد (گزارش اپراتور)</string>
+    <string name="last_event_failed">ناموفق (کد %1$d)</string>
+    <string name="last_event_with_time">%1$s — %2$s</string>
+
+    <string name="background_title">تنظیمات پس‌زمینه</string>
+    <string name="guide_samsung">سامسونگ شناسایی شد:\nSettings → Apps → SMS Auto Forwarder → Battery → Unrestricted\nدر صورت نیاز Background usage limits را هم بررسی کنید.</string>
+    <string name="guide_xiaomi">شیائومی / Redmi / POCO شناسایی شد:\nBackground autostart را برای برنامه روشن کنید و Battery/Battery saver را روی No restrictions بگذارید.</string>
+    <string name="guide_generic">اگر گوشی برنامه را در پس‌زمینه می‌بندد، اجرای پس‌زمینه را مجاز و محدودیت باتری را غیرفعال کنید.</string>
+    <string name="dual_sim_note">گوشی دو سیم‌کارته: ارسال از سیم‌کارت پیش‌فرض SMS اندروید انجام می‌شود. در صورت نیاز سیم پیش‌فرض پیامک را در تنظیمات گوشی مشخص کنید.</string>
+    <string name="security_warning">OTP، کد بانکی و پیام‌های محرمانه را فقط وقتی خودکار فوروارد کنید که گیرنده صراحتاً مجاز و مورد اعتماد باشد.</string>
+
+    <string name="error_sender_required">فرستنده را وارد کنید.</string>
+    <string name="error_recipient_invalid">شماره گیرنده معتبر وارد کنید.</string>
+    <string name="error_sender_recipient_same">فرستنده و گیرنده ظاهراً یکسان هستند. برای جلوگیری از اشتباه یکی را تغییر دهید.</string>
+    <string name="settings_saved">تنظیمات روی گوشی ذخیره شد.</string>
+    <string name="permissions_already_granted">مجوزهای SMS قبلاً تأیید شده‌اند.</string>
+    <string name="permissions_granted">مجوزهای SMS تأیید شدند.</string>
+    <string name="permissions_missing">مجوزهای SMS هنوز کامل نیستند.</string>
+</resources>
