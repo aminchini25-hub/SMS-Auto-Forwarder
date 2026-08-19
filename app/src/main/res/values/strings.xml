@@ -57,6 +57,8 @@
     <string name="error_sender_required">Enter a sender.</string>
     <string name="error_recipient_invalid">Enter a valid recipient phone number.</string>
     <string name="error_sender_recipient_same">Sender and recipient appear to be the same. Change one to avoid mistakes.</string>
+    <string name="error_channel_required">Enable at least one forwarding channel before activating.</string>
+    <string name="error_webhook_https">Webhook URL must use HTTPS.</string>
     <string name="settings_saved">Settings saved locally.</string>
     <string name="permissions_already_granted">SMS permissions are already granted.</string>
     <string name="permissions_granted">SMS permissions granted.</string>

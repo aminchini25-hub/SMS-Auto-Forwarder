@@ -133,6 +133,11 @@ class MainActivity : AppCompatActivity() {
         val telegramChatId = editTelegramChatId.text?.toString()?.trim().orEmpty()
         val webhookUrl = editWebhookUrl.text?.toString()?.trim().orEmpty()
 
+        if (switchEnable.isChecked && !channelSms && !channelTelegram && !channelWebhook) {
+            Toast.makeText(this, R.string.error_channel_required, Toast.LENGTH_LONG).show()
+            return
+        }
+
         if (sender.isBlank()) {
             editSender.error = getString(R.string.error_sender_required)
             return
@@ -162,6 +167,11 @@ class MainActivity : AppCompatActivity() {
 
         if (channelWebhook && webhookUrl.isBlank()) {
             Toast.makeText(this, R.string.webhook_url_hint, Toast.LENGTH_LONG).show()
+            return
+        }
+
+        if (channelWebhook && !NetworkForwarder.isValidHttpsUrl(webhookUrl)) {
+            Toast.makeText(this, R.string.error_webhook_https, Toast.LENGTH_LONG).show()
             return
         }
 
@@ -247,7 +257,7 @@ class MainActivity : AppCompatActivity() {
             ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) ==
                 PackageManager.PERMISSION_GRANTED
 
-        val permissionsOk = receiveGranted && sendGranted
+        val permissionsOk = receiveGranted && (!prefs.channelSmsEnabled || sendGranted)
 
         val permissionText =
             if (permissionsOk) getString(R.string.status_permissions_granted)

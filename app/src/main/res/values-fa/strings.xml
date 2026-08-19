@@ -57,6 +57,8 @@
     <string name="error_sender_required">فرستنده را وارد کنید.</string>
     <string name="error_recipient_invalid">شماره گیرنده معتبر وارد کنید.</string>
     <string name="error_sender_recipient_same">فرستنده و گیرنده ظاهراً یکسان هستند. برای جلوگیری از اشتباه یکی را تغییر دهید.</string>
+    <string name="error_channel_required">برای فعال‌سازی حداقل یک کانال فوروارد را فعال کنید.</string>
+    <string name="error_webhook_https">آدرس وب‌هوک باید HTTPS باشد.</string>
     <string name="settings_saved">تنظیمات روی گوشی ذخیره شد.</string>
     <string name="permissions_already_granted">مجوزهای SMS قبلاً تأیید شده‌اند.</string>
     <string name="permissions_granted">مجوزهای SMS تأیید شدند.</string>

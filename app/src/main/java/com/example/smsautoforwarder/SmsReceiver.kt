@@ -29,7 +29,7 @@ class SmsReceiver : BroadcastReceiver() {
                 ?: return
 
         if (BuildConfig.DEBUG) {
-            Log.d(TAG, "Incoming SMS detected from sender=$incomingSender")
+            Log.d(TAG, "Incoming SMS detected.")
         }
 
         if (!SenderMatcher.matches(incomingSender, configuredSender)) {

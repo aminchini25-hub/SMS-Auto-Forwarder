@@ -29,7 +29,7 @@ object NetworkForwarder {
                 }
                 postJson(url, payload)
             } catch (t: Throwable) {
-                Log.e(TAG, "Telegram forward failed.", t)
+                Log.e(TAG, "Telegram forward failed.")
                 false
             }
             onResult(success)
@@ -45,8 +45,8 @@ object NetworkForwarder {
         executor.execute {
             val success = try {
                 val url = URL(webhookUrl)
-                if (url.protocol != "https" && url.protocol != "http") {
-                    throw IllegalArgumentException("Unsupported webhook protocol.")
+                if (!isValidHttpsUrl(url)) {
+                    throw IllegalArgumentException("Webhook must use HTTPS.")
                 }
                 val payload = JSONObject().apply {
                     put("sender", sender)
@@ -55,12 +55,23 @@ object NetworkForwarder {
                 }
                 postJson(url, payload)
             } catch (t: Throwable) {
-                Log.e(TAG, "Webhook forward failed.", t)
+                Log.e(TAG, "Webhook forward failed.")
                 false
             }
             onResult(success)
         }
     }
+
+    fun isValidHttpsUrl(value: String): Boolean {
+        return try {
+            isValidHttpsUrl(URL(value))
+        } catch (_: Exception) {
+            false
+        }
+    }
+
+    private fun isValidHttpsUrl(url: URL): Boolean =
+        url.protocol.equals("https", ignoreCase = true) && url.host.isNotBlank()
 
     private fun postJson(url: URL, payload: JSONObject): Boolean {
         val connection = url.openConnection() as HttpURLConnection
