@@ -51,7 +51,7 @@
     <string name="guide_samsung">Samsung detected:&#10;Settings → Apps → SMS Auto Forwarder → Battery → Unrestricted.&#10;If needed, also check Background usage limits.</string>
     <string name="guide_xiaomi">Xiaomi / Redmi / POCO detected:&#10;Enable Background autostart for this app and set Battery/Battery saver to No restrictions.</string>
     <string name="guide_generic">Allow this app to run in the background and disable aggressive battery optimization if your phone stops it.</string>
-    <string name="dual_sim_note">Dual-SIM: forwarding uses Android's default SMS SIM. Set the default SMS SIM in system settings if needed.</string>
+    <string name="dual_sim_note">Dual-SIM: forwarding uses Android&apos;s default SMS SIM. Set the default SMS SIM in system settings if needed.</string>
     <string name="security_warning">Do not auto-forward OTP, banking codes, or confidential messages unless the recipient is explicitly authorized and trusted.</string>
 
     <string name="error_sender_required">Enter a sender.</string>
