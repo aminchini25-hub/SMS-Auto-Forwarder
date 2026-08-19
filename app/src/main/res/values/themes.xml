@@ -9,6 +9,8 @@
         <item name="android:navigationBarColor">?android:colorBackground</item>
     </style>
 
+    <style name="Widget.App" />
+
     <style name="Widget.App.SectionCard" parent="Widget.MaterialComponents.CardView">
         <item name="cardCornerRadius">20dp</item>
         <item name="cardElevation">0dp</item>
