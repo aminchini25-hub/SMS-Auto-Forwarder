@@ -20,7 +20,7 @@
     <string name="webhook_url_hint">آدرس Webhook (https://…)</string>
 
     <string name="network_status_title">وضعیت کانال‌های شبکه</string>
-    <string name="network_status_template">تلگرام: %1$s\nوبهوک: %2$s\nآخرین نتیجه شبکه: %3$s</string>
+    <string name="network_status_template">تلگرام: %1$s&#10;وبهوک: %2$s&#10;آخرین نتیجه شبکه: %3$s</string>
     <string name="channel_configured">تنظیم شده</string>
     <string name="channel_not_configured">تنظیم نشده</string>
     <string name="network_no_attempt_yet">هنوز تلاشی انجام نشده</string>
@@ -39,7 +39,7 @@
     <string name="status_permissions_granted">تأیید شده</string>
     <string name="status_permissions_missing">ناقص</string>
     <string name="status_no_forward_yet">هنوز فورواردی انجام نشده</string>
-    <string name="status_template">فوروارد خودکار: %1$s\nفرستنده: %2$s\nگیرنده: %3$s\nمجوزهای SMS: %4$s\nآخرین نتیجه: %5$s</string>
+    <string name="status_template">فوروارد خودکار: %1$s&#10;فرستنده: %2$s&#10;گیرنده: %3$s&#10;مجوزهای SMS: %4$s&#10;آخرین نتیجه: %5$s</string>
 
     <string name="last_event_queued">در صف ارسال</string>
     <string name="last_event_sent">ارسال شد</string>
@@ -48,8 +48,8 @@
     <string name="last_event_with_time">%1$s — %2$s</string>
 
     <string name="background_title">تنظیمات پس‌زمینه</string>
-    <string name="guide_samsung">سامسونگ شناسایی شد:\nSettings → Apps → SMS Auto Forwarder → Battery → Unrestricted\nدر صورت نیاز Background usage limits را هم بررسی کنید.</string>
-    <string name="guide_xiaomi">شیائومی / Redmi / POCO شناسایی شد:\nBackground autostart را برای برنامه روشن کنید و Battery/Battery saver را روی No restrictions بگذارید.</string>
+    <string name="guide_samsung">سامسونگ شناسایی شد:&#10;Settings → Apps → SMS Auto Forwarder → Battery → Unrestricted&#10;در صورت نیاز Background usage limits را هم بررسی کنید.</string>
+    <string name="guide_xiaomi">شیائومی / Redmi / POCO شناسایی شد:&#10;Background autostart را برای برنامه روشن کنید و Battery/Battery saver را روی No restrictions بگذارید.</string>
     <string name="guide_generic">اگر گوشی برنامه را در پس‌زمینه می‌بندد، اجرای پس‌زمینه را مجاز و محدودیت باتری را غیرفعال کنید.</string>
     <string name="dual_sim_note">گوشی دو سیم‌کارته: ارسال از سیم‌کارت پیش‌فرض SMS اندروید انجام می‌شود. در صورت نیاز سیم پیش‌فرض پیامک را در تنظیمات گوشی مشخص کنید.</string>
     <string name="security_warning">OTP، کد بانکی و پیام‌های محرمانه را فقط وقتی خودکار فوروارد کنید که گیرنده صراحتاً مجاز و مورد اعتماد باشد.</string>
