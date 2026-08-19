@@ -20,3 +20,8 @@ Key points:
 - GitHub Actions APK build workflow
 
 See `README_FA.md` for the full Persian guide.
+
+## Build verification
+
+The `Build Android APK` workflow runs unit tests, builds `app-debug.apk`, and
+publishes it as the `SMS-Auto-Forwarder-APK` artifact.
