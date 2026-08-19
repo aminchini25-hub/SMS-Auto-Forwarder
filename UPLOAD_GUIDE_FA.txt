@@ -1,0 +1,40 @@
+راهنمای آپلود دستی در GitHub
+
+این پوشه آماده آپلود است و ساختار آن نباید تغییر کند.
+
+مهم:
+1) فایل ZIP را مستقیم داخل GitHub آپلود نکنید.
+2) ZIP را Extract کنید.
+3) وارد پوشه GitHub_Upload_Ready شوید.
+4) در GitHub:
+   Add file → Upload files
+5) پوشه‌های app و .github و بقیه فایل‌های ریشه را با هم Drag & Drop کنید.
+6) ساختار باید دقیقاً این‌طور بماند:
+
+.github/
+  workflows/
+    build-apk.yml
+
+app/
+  build.gradle.kts
+  src/
+    main/
+      AndroidManifest.xml
+      java/
+      res/
+    test/
+
+build.gradle.kts
+settings.gradle.kts
+gradle.properties
+
+بعد از Commit:
+Actions → Build Android APK
+
+اگر Workflow سبز شد:
+Artifacts → SMS-Auto-Forwarder-APK → دانلود → app-debug.apk
+
+نکته:
+فایل‌های اضافی قدیمی که قبلاً اشتباهی در ریشه GitHub آپلود شده‌اند
+(مثل MainActivity.kt یا AndroidManifest.xml در ریشه) برای Build استفاده نمی‌شوند،
+ولی بعداً می‌توانید برای مرتب بودن Repository حذفشان کنید.
